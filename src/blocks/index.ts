@@ -1,8 +1,8 @@
 /* eslint-disable prefer-const */
-import { ethereum } from "@graphprotocol/graph-ts";
+import { EthereumBlock } from "@graphprotocol/graph-ts";
 import { Block } from "../../generated/schema";
 
-export function handleBlock(block: ethereum.Block): void {
+export function handleBlock(block: EthereumBlock.Block): void {
   let blockEntity = new Block(block.hash.toHex());
   blockEntity.parentHash = block.parentHash;
   blockEntity.unclesHash = block.unclesHash;
