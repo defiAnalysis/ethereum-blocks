@@ -2,7 +2,7 @@
 import { EthereumBlock } from "@graphprotocol/graph-ts";
 import { Block } from "../../generated/schema";
 
-export function handleBlock(block: EthereumBlock.Block): void {
+export function handleBlock(block: EthereumBlock): void {
   let blockEntity = new Block(block.hash.toHex());
   blockEntity.parentHash = block.parentHash;
   blockEntity.unclesHash = block.unclesHash;
